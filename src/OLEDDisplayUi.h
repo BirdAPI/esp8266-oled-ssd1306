@@ -106,9 +106,9 @@ struct LoadingStage {
   void (*callback)();
 };
 
-typedef void (*FrameCallback)(OLEDDisplay *display,  OLEDDisplayUiState* state, int16_t x, int16_t y);
-typedef void (*OverlayCallback)(OLEDDisplay *display,  OLEDDisplayUiState* state);
-typedef void (*LoadingDrawFunction)(OLEDDisplay *display, LoadingStage* stage, uint8_t progress);
+typedef std::function<void(OLEDDisplay *display,  OLEDDisplayUiState* state, int16_t x, int16_t y)> FrameCallback;
+typedef std::function<void(OLEDDisplay *display,  OLEDDisplayUiState* state)> OverlayCallback;
+typedef std::function<void(OLEDDisplay *display, LoadingStage* stage, uint8_t progress)> LoadingDrawFunction;
 
 class OLEDDisplayUi {
   private:
