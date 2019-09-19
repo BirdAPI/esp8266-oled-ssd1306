@@ -40,6 +40,10 @@
 #error "Unkown operating system"
 #endif
 
+#ifdef ESP32
+#include <functional>
+#endif
+
 #include "OLEDDisplay.h"
 
 //#define DEBUG_OLEDDISPLAYUI(...) Serial.printf( __VA_ARGS__ )
